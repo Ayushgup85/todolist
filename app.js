@@ -9,8 +9,9 @@ app.use(express.static("public"));
 mongoose.connect("mongodb://localhost:27017/todolistDB",{useNewUrlParser:true});
 
 const itemsSchema={
-    
-}
+name:String
+};
+const Item =mongoose.model("Item",itemsSchema);
 app.get("/",function(req,res)
 {
     let today=new Date();
